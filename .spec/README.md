@@ -1,20 +1,19 @@
 Explore Pakistan - AI Travel Portal 🏔️
-
-Explore Pakistan ek modern aur responsive web application hai jo Next.js 14 (App Router) aur Tailwind CSS par banayi gayi hai. Yeh portal users ko Pakistan ke haseen tareen maqamaat dhoondhne aur unki details janne mein madad karta hai. Saath hi, isme ek smart AI Travel Assistant (Safar-Guide AI) laga hai jo Google Gemini API ke zariye real-time travel queries ke jawab deta hai.
+Explore Pakistan is a modern and responsive web application built using Next.js 14 (App Router) and Tailwind CSS. This portal helps users discover Pakistan's most beautiful destinations and explore their details. Additionally, it features a smart AI Travel Assistant (Safar-Guide AI) that provides real-time answers to travel queries via the Google Gemini API.
 
 ✨ Features
 
-Responsive Layout: Mobile, tablet, aur desktop par 100% responsive design.
+Responsive Layout: 100% responsive design for mobile, tablet, and desktop.
 
-Dynamic Categories: Northern Areas, Cultural, Beaches, aur Adventure spots ke liye interactive filter controls.
+Dynamic Categories: Interactive filter controls for Northern Areas, Cultural sites, Beaches, and Adventure spots.
 
-Search Functionality: Real-time search filter destinations dhoondhne ke liye.
+Search Functionality: Real-time search filters to find destinations instantly.
 
-Dynamic 5-Day Itineraries: Har spot ke liye detailed modal jisme route guide, itinerary aur safe travel tips shamil hain.
+Dynamic 5-Day Itineraries: Detailed modals for each destination, including route guides, itineraries, and safe travel tips.
 
-Gemini Powered Chatbot: Safar-Guide AI Assistant jo dastyab packages aur guides par Roman Urdu mein baat karta hai.
+Gemini Powered Chatbot: Safar-Guide AI Assistant that communicates in Roman Urdu regarding available packages and guides.
 
-Spec-Kit Plus Compliance: Project structure aur tasks tracking .spec folder ke andar save hain.
+Spec-Kit Plus Compliance: Project structure and task tracking are saved within the .spec folder.
 
 🛠️ Tech Stack
 
@@ -23,18 +22,17 @@ Frontend: Next.js 14, React, Tailwind CSS, Lucide Icons.
 AI Integration: Google Gemini API.
 
 Language: TypeScript.
+
 🚀 How To Run Locally
 
-Project dependencies install karein:
+Install project dependencies:
 
+Bash
 npm install
 
+2. Start the development server:
+   ```bash
+   npm run dev
+Open your browser at: http://localhost:3000
 
-Development server chalayein:
-
-npm run dev
-
-
-Browser mein open karein: http://localhost:3000
-
-Built as an Artificial Intelligence Class Project under Ma'am Mahnoor
+🎓 Built as an Artificial Intelligence Class Project under the guidance of Ma'am Mahnoor.

@@ -11,11 +11,11 @@ const apiKey = "";
 
 // System prompt to guide Gemini's behavior
 const SYSTEM_PROMPT = `
-Tum ek friendly aur knowledgeable Pakistani Travel Assistant ho jiska naam "Safar-Guide AI" hai. 
-Tumhara kaam users ko Pakistan ghoomne ke liye best travel advice, itineraries, hotels, routes, aur local tips dena hai.
-Hamesha friendly Roman Urdu/Hindi (Urdu in English script) aur thodi English mix karke baat karo. 
-Responses ko chota, structured (points mein), aur behad readable rakho.
-Khubsurat emojis (🏔️, 🚗, 🏨, 🥘, 🌟) ka khula istemaal karo taaki user ko parhne mein maza aaye.
+I am Safar-Guide AI, your friendly and knowledgeable Pakistani Travel Assistant! 🏔️✨ 
+My mission is to provide users with the best travel advice, itineraries, hotel recommendations, routes, and local tips for exploring Pakistan. 🏔️🚗✨
+Always communicate in a friendly mix of Roman Urdu/Hindi (Urdu in English script) and a bit of English.
+Keep your responses short, structured (in bullet points), and highly readable.
+Use plenty of beautiful emojis (🏔️, 🚗, 🏨, 🥘, 🌟) so that the user finds it enjoyable to read. 😊✨
 `;
 
 export default function Home() {
@@ -30,7 +30,7 @@ export default function Home() {
   const [isChatOpen, setIsChatOpen] = useState(false);
   const [chatInput, setChatInput] = useState('');
   const [messages, setMessages] = useState<Array<{ sender: 'user' | 'bot'; text: string }>>([
-    { sender: 'bot', text: 'Assalam-o-Alaikum! 🏔️ Main hoon aapka Safar-Guide AI. Aap Pakistan mein kahan ghoomna chahte hain? Mujh se koi bhi sawal poochein!' }
+    { sender: 'bot', text: 'Assalam-o-Alaikum! 🏔️ I am your Safar-Guide AI. Where would you like to travel in Pakistan? Feel free to ask me anything! 🌟' }
   ]);
   const [isBotTyping, setIsBotTyping] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
@@ -49,37 +49,43 @@ export default function Home() {
       category: 'north',
       rating: '4.9',
       location: 'Gilgit-Baltistan',
-      desc: 'Rakaposhi pahar ke saaye mein basi Hunza Valley apni khubsurat jheelon, baghaat aur purani saqafat ki wajah se jannat nazeer hai.',
+      desc: 'Hunza Valley, nestled in the shadow of the Rakaposhi mountain, is a heavenly paradise known for its beautiful lakes, orchards, and ancient culture. 🏔️✨🍎',
       bestTime: 'March - October',
       imageBg: 'bg-emerald-900',
       itinerary: [
-        'Day 1: Islamabad se Chilas ya Naran ke raste safar aur raat ka stay.',
-        'Day 2: Hunza Valley aamad, Karimabad bazaar aur Altit Fort ki sair.',
-        'Day 3: Attabad Lake par boating aur Hussaini Suspension Bridge ka adventure.',
-        'Day 4: Khunjerab Pass (China Border) ki sair aur wapsi par Karimabad stay.',
-        'Day 5: Rakaposhi viewpoint par rukte hue wapsi ka safar.'
+        'Day 1: Travel from Islamabad via Chilas or Naran and stay there for the night. 🚗🏨',
+        'Day 2: Arrival in Hunza Valley, followed by a visit to Karimabad Bazaar and Altit Fort. 🏔️✨',
+        'Day 3:Boating at Attabad Lake and adventure at the Hussaini Suspension Bridge. 🚣‍♂️🌉',
+        'Day 4: Trip to Khunjerab Pass (China Border) and return to Karimabad for the night. 🇨🇳❄️',
+        'Day 5:Return journey while stopping at the Rakaposhi viewpoint. 🏔️🚗'
       ],
       routes: 'Islamabad -> Karakoram Highway -> Chilas -> Gilgit -> Hunza.',
-      tips: 'Garmiyon mein bhi halki sardi hoti hai, isliye light jacket sath rakhein. Attabad Lake par boating rates pehle se confirm karein.'
+      tips: 'Even in summer, it gets a bit chilly, so keep a light jacket with you.Confirm the boating rates at Attabad Lake in advance. 🚣‍♂️💰'
     },
     {
       id: 'skardu',
       title: 'Skardu Valley',
       category: 'north',
       rating: '4.8',
+
+
       location: 'Gilgit-Baltistan',
-      desc: 'Duniya ke sab se unche paharon ka rasta! Yahan ka Cold Desert, Shangrila Lake aur purane qilay dekhne se taaluq rakhte hain.',
+      
+      desc: 'The route to the world highest mountains The Cold Desert, Shangrila Lake and ancient forts here are well worth seeing.',
+
+
+
       bestTime: 'June - September',
       imageBg: 'bg-teal-900',
       itinerary: [
-        'Day 1: Gilgit ya Skardu flight (ya rasta safar), Shangrila Resort check-in.',
-        'Day 2: Upper Kachura Lake ki sair aur local trout fish ka maza.',
-        'Day 3: Sarfaranga Cold Desert mein ATV ride aur Shigar Fort ka daura.',
-        'Day 4: Deosai National Park (Duniya ka doosra uncha tareen maidan) ki sair.',
-        'Day 5: Skardu bazaar se dry fruits ki shopping aur wapsi.'
+        'Day 1: Flight to Gilgit or Skardu (or travel by road), and check-in at Shangrila Resort..',
+        'Day 2: Visit to Upper Kachura Lake and enjoying local trout fish..',
+        'Day 3: ATV ride in the Sarfaranga Cold Desert and a tour of Shigar Fort.',
+        'Day 4: Visit to Deosai National Park (the second-highest plateau in the world).',
+        'Day 5: Shopping for dry fruits at Skardu bazaar and returning home.'
       ],
-      routes: 'Islamabad se Direct Flight ya Karakoram Highway se Juglot-Skardu road.',
-      tips: 'Deosai ghoomne ke liye 4x4 Prado/Jeep zaroori hai. Sardiyon mein rasta bilkul band hota hai.'
+      routes: 'Direct flight from Islamabad or the Juglot-Skardu road via the Karakoram Highway.',
+      tips: 'A 4x4 Prado/Jeep is necessary to explore Deosai. The road is completely closed during the winter.'
     },
     {
       id: 'swat',
@@ -87,18 +93,18 @@ export default function Home() {
       category: 'adventure',
       rating: '4.7',
       location: 'Khyber Pakhtunkhwa',
-      desc: 'Mashriq ka Switzerland! Swat Valley sabz maidano, behte daryao aur Malam Jabba ski resort ke liye bohot mashhoor hai.',
-      bestTime: 'Poora Saal (Sardiyon mein snow, Garmiyon mein suhana mausam)',
+      desc: 'Switzerland of the East! Swat Valley is very famous for its green meadows, flowing rivers, and the Malam Jabba ski resort.',
+      bestTime: 'All year round (snow in winter, pleasant weather in summer).',
       imageBg: 'bg-cyan-950',
       itinerary: [
-        'Day 1: Swat Motorway ke zariye Mingora aamad, White Palace Marghazar ki sair.',
-        'Day 2: Malam Jabba Ski Resort mein chairlift ride aur zipline adventure.',
-        'Day 3: Kalam Valley ka safar, Ushu Forest aur behte daryaye Swat ke nazare.',
-        'Day 4: Mahodand Lake ka jeep safari safar aur wahan camping ka lutf.',
-        'Day 5: Swat ke mashhoor emeralds (zumurrud) aur shawls ki shopping aur wapsi.'
+        'Day 1: Arrival in Mingora via Swat Motorway and a visit to the White Palace in Marghazar.',
+        'Day 2: Chairlift ride and zipline adventure at the Malam Jabba Ski Resort.',
+        'Day 3: Journey to Kalam Valley, with views of Ushu Forest and the flowing Swat River.',
+        'Day 4: Jeep safari trip to Mahodand Lake and enjoying camping there.',
+        'Day 5: Shopping for Swat famous emeralds  and shawls, followed by the return trip..'
       ],
       routes: 'M1 Motorway -> Swat Expressway -> Mingora -> Kalam.',
-      tips: 'Malam Jabba mein adventure rides ke tickets counter se lein. Mahodand Lake ka rasta sirf garmiyon mein khulta hai.'
+      tips: 'Get tickets for the adventure rides in Malam Jabba from the counter. The road to Mahodand Lake only opens during the summer..'
     },
     {
       id: 'lahore',
@@ -106,17 +112,17 @@ export default function Home() {
       category: 'cultural',
       rating: '4.9',
       location: 'Punjab',
-      desc: 'Mughal daur ki haseen tareen tareekhi nishani. Lahore ka shahi qila aur purani galiyan hamari bemisaal saqafat ki akasi karti hain.',
-      bestTime: 'October - March (Thanda Mausam)',
+      desc: 'The most beautiful historical landmark of the Mughal era. Lahore Fort (Shahi Qila) and the old streets are a reflection of our unparalleled culture.',
+      bestTime: 'October - March (Cool weather)',
       imageBg: 'bg-amber-950',
       itinerary: [
-        'Day 1: Badshahi Masjid, Shahi Qila aur Sheesh Mahal ki sair.',
-        'Day 2: Walled City (Androon Lahore) ka rangeen daura aur Delhi Gate.',
-        'Day 3: Shalimar Gardens aur Wagah Border par parcham utarne ki shaandar ceremony.',
-        'Day 4: Lahore Museum aur Anarkali Food Street par dahi bhallay aur nihari ka maza.'
+        'Day 1: Visit to the Badshahi Mosque, Lahore Fort (Shahi Qila), and the Palace of Mirrors (Sheesh Mahal).',
+        'Day 2: A colorful tour of the Walled City (Androon Lahore) and Delhi Gate.',
+        'Day 3: Visit to Shalimar Gardens and the magnificent flag-lowering ceremony at the Wagah Border.',
+        'Day 4: Enjoying Dahi Bhallay and Nihari at the Lahore Museum and Anarkali Food Street..'
       ],
-      routes: 'M2 Motorway se direct Lahore exit ya Orange Line Metro.',
-      tips: 'Androon shehar ghoomne ke liye local rickshaw ya paidal chalna behtar hai. Food Street par desi khane lazmi try karein!'
+      routes: 'Direct exit to Lahore from the M2 Motorway or the Orange Line Metro..',
+      tips: 'It is better to travel by local rickshaw or on foot to explore the old city (Androon Shehar). Do try the local traditional food at Food Street!'
     },
     {
       id: 'gwadar',
@@ -124,17 +130,17 @@ export default function Home() {
       category: 'south',
       rating: '4.6',
       location: 'Balochistan',
-      desc: 'Khubsurat neela samandar aur anokhi pahari chatanein! Gwadar beach aur Sphinx rock dekh kar insaan hairan reh jata hai.',
+      desc: 'Beautiful blue ocean and unique rocky cliffs! One is left amazed after seeing Gwadar Beach and the Sphinx Rock.',
       bestTime: 'November - February',
       imageBg: 'bg-blue-950',
       itinerary: [
-        'Day 1: Makran Coastal Highway ke zariye Kund Malir Beach aur Princess of Hope ki sair.',
-        'Day 2: Gwadar port aamad, Koh-e-Batil par sunset ka bemisaal nazara.',
-        'Day 3: Marine Drive par drive aur local fish market se fresh seafood party.',
-        'Day 4: Ormara Beach par raste mein stay aur Karachii wapsi.'
+        'Day 1: Excursion to Kund Malir Beach and Princess of Hope via the Makran Coastal Highway.',
+        'Day 2: Arrival at Gwadar Port and enjoying an incomparable sunset view at Koh-e-Batil.',
+        'Day 3: A drive along Marine Drive and a fresh seafood party from the local fish market.',
+        'Day 4: A stopover at Ormara Beach on the way back, followed by a return to Karachi..'
       ],
       routes: 'Karachi -> Makran Coastal Highway -> Gwadar.',
-      tips: 'Highway par fuel stations kam hain, isliye tanki pehle se full rakhein. Mobile signals sirf main shehar mein sahi aate hain.'
+      tips: 'Fuel stations are scarce on the highway, so keep your tank full beforehand. Mobile signals are only reliable within the main city.'
     },
     {
       id: 'mohenjo',
@@ -142,17 +148,16 @@ export default function Home() {
       category: 'cultural',
       rating: '4.5',
       location: 'Sindh',
-      desc: '5000 saal purani Indus Valley Civilization ka markaz. Duniya ke purane tareen aur behtareen tareeqe se banaye gaye shehron mein se aik.',
+      desc: 'The center of the 5000-year-old Indus Valley Civilization. One of the oldest and most well-planned cities in the world.',
       bestTime: 'November - March',
       imageBg: 'bg-yellow-950',
       itinerary: [
-        'Day 1: Larkana aamad aur Mohenjo-daro archaeological site par check-in.',
-        'Day 2: Great Bath, SD Area, aur local museum mein daryaft shuda cheezon ka mushahida.',
-        'Day 3: King Priest aur Dancing Girl ke bare mein guides se dilchasp maloomat.',
-        'Day 4: Local Sindhi saqafat aur khane try karke wapsi.'
+        'Day 1: Arrival in Larkana and check-in at the Mohenjo-daro archaeological site.',
+        'Day 2: Exploration of the Great Bath, SD Area, and observation of artifacts discovered in the local museum.',
+        'Day 3: Interesting information from guides about the King Priest and the Dancing Girl.',
+        'Day 4: Experiencing local Sindhi culture and food, followed by the return trip.'
       ],
-      routes: 'Karachi se Larkana National Highway ya Larkana Flight.',
-      tips: 'Garm mausem mein bilkul mat jayein. Apne sath pani ki botal aur dhoop se bachne ke liye dhoop chashma/hat lazmi rakhein.'
+      routes: 'Travel via National Highway from Karachi to Larkana or take a flight. Tips: Do not travel in hot weather. Keep a water bottle with you and be sure to carry sunglasses or a hat to protect yourself from the sun.'
     }
   ];
 
@@ -230,7 +235,7 @@ export default function Home() {
     } catch (err) {
       setMessages(prev => [...prev, { 
         sender: 'bot', 
-        text: 'Maaf kijiyega! 🔌 Connection mein thoda masla aa raha hai. Aap apna sawal dobara pooch sakte hain ya internet connection check karein.' 
+        text: 'Sorry! There is a slight connection issue. You can ask your question again or check your internet connection. 🔌⚠️' 
       }]);
     } finally {
       setIsBotTyping(false);
@@ -307,7 +312,7 @@ export default function Home() {
                 Explore <span className="text-emerald-400">Pakistan</span>
               </h1>
               <p className="text-lg md:text-xl text-slate-300 max-w-2xl mx-auto mb-8">
-                Breathtaking valleys, unche pahar, khubsurat jheelain, aur hamari mehmaan-nawazi! Aaiye mil kar apna agla safar plan karein.
+               Breathtaking valleys, high mountains, beautiful lakes, and our hospitality! Let's plan your next trip together. 🏔️✨✈️
               </p>
 
               {/* Search bar redirection */}
@@ -340,7 +345,7 @@ export default function Home() {
                 Mashhoor Maqamaat 🏔️
               </h2>
               <p className="text-slate-500 mt-2">
-                Travelers ke sab se pasandida aur haseen spots (Click "Mazeed Parhein" to view complete guide)
+             Travelers' most favorite and beautiful spots (Click "Read More" to view complete guide)
               </p>
             </div>
 
@@ -382,8 +387,8 @@ export default function Home() {
             {/* Quick Promo Banner */}
             <div className="bg-gradient-to-r from-emerald-900 to-emerald-850 text-white rounded-3xl p-8 md:p-12 shadow-md flex flex-col md:flex-row items-center justify-between gap-6">
               <div className="max-w-xl">
-                <h3 className="text-2xl font-bold mb-2">Safar plan karne mein koi mushkil pesh aa rahi hai?</h3>
-                <p className="text-slate-300 text-sm">Niche diye gaye Safar-Guide AI Chatbot se live poochein aur apna tour foran design karwayein!</p>
+                <h3 className="text-2xl font-bold mb-2">Are you facing any difficulty in planning your trip? 🚗🏔️</h3>
+                <p className="text-slate-300 text-sm">Ask our Safar-Guide AI Chatbot live below and get your tour designed instantly! 🌟✈️</p>
               </div>
               <button 
                 onClick={() => setIsChatOpen(true)}
@@ -494,7 +499,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="text-center py-20 bg-white rounded-2xl border border-slate-200">
-              <p className="text-slate-400 text-sm">Aapki dhoondi gayi jagah dastyab nahi hai. Koi aur naam likh kar try karein!</p>
+              <p className="text-slate-400 text-sm">The location you searched for is not available. Please try entering another name! 🗺️🔍</p>
               <button 
                 onClick={() => { setSearchQuery(''); setDestinationFilter('all'); }} 
                 className="mt-4 text-xs font-bold text-emerald-600 hover:underline"
@@ -510,7 +515,7 @@ export default function Home() {
       {activeTab === 'about' && (
         <div className="max-w-4xl mx-auto px-6 py-12">
           <div className="text-center mb-12">
-            <h1 className="text-3xl font-black text-slate-900 tracking-tight">Hamare Baare Mein (Group Info)</h1>
+            <h1 className="text-3xl font-black text-slate-900 tracking-tight">About Us 🌟 (Group Info)</h1>
             <p className="text-slate-500 mt-2">AI Class Project under Ma'am Mahnoor 🎓</p>
           </div>
 
@@ -521,9 +526,9 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-900">Member 1</h3>
-                <p className="text-xs text-emerald-600 font-semibold mb-2">Lead Developer & UI Designer</p>
-                <p className="text-xs text-slate-500 mb-4">MSc Artificial Intelligence Student. Next.js, Tailwind, aur Python AI applications par kaam karte hain.</p>
-                <span className="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-1 rounded-full uppercase">Roll No: AI-001</span>
+                <p className="text-xs text-emerald-600 font-semibold mb-2">Marriam Jarwar</p>
+                <p className="text-xs text-slate-500 mb-4">BSc Computer Science student 🎓Working on Next.js, Tailwind, and Python AI applications 💻🚀</p>
+                <span className="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-1 rounded-full uppercase">Roll No: CSC-21F-059</span>
               </div>
             </div>
 
@@ -533,9 +538,9 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-slate-900">Member 2</h3>
-                <p className="text-xs text-emerald-600 font-semibold mb-2">AI Backend & Vector DB Expert</p>
-                <p className="text-xs text-slate-500 mb-4">FastAPI implementation, Gemini integration, aur Qdrant Cloud dynamic search databases design karne par kam.</p>
-                <span className="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-1 rounded-full uppercase">Roll No: AI-002</span>
+                <p className="text-xs text-emerald-600 font-semibold mb-2">Munaza</p>
+                <p className="text-xs text-slate-500 mb-4">Working on FastAPI implementation, Gemini integration, and Qdrant Cloud dynamic search database design 🚀⚙️</p>
+                <span className="text-[10px] bg-slate-100 text-slate-600 font-bold px-2 py-1 rounded-full uppercase">Roll No: BSE-23S-02</span>
               </div>
             </div>
           </div>
@@ -543,7 +548,8 @@ export default function Home() {
           <div className="bg-white rounded-2xl p-8 border border-slate-100 shadow-sm">
             <h3 className="text-xl font-bold text-slate-900 mb-4">Project Overview</h3>
             <p className="text-slate-600 text-sm leading-relaxed mb-4">
-              Yeh project Next.js 14 aur Tailwind CSS par banaya gaya hai. Humne isme ek live AI Travel Chatbot integrate kiya hai, jo Gemini API ko use karte hue users ko real-time guide karta hai.
+              This project is built using Next.js 14 and Tailwind CSS. 💻✨
+              We have integrated a live AI Travel Chatbot that uses the Gemini API to guide users in real-time. 🤖🗺️
             </p>
             <div className="flex flex-wrap gap-2">
               <span className="text-xs bg-emerald-50 text-emerald-700 font-semibold px-3 py-1 rounded-full">Next.js 14</span>

@@ -1,68 +1,65 @@
-Explore Pakistan - AI Travel Portal 🏔️
+Here is the English translation of your project documentation, formatted professionally for your repository or project submission.
 
-Explore Pakistan ek modern, responsive aur feature-rich web application hai jo Next.js 14 (App Router) aur Tailwind CSS par banayi gayi hai. Yeh portal users ko Pakistan ke haseen tareen maqamaat dhoondhne aur unki details janne mein madad karta hai. Saath hi, isme ek smart AI Travel Assistant (Safar-Guide AI) laga hai jo Google Gemini API ke zariye real-time travel queries ke jawab deta hai.
+Explore Pakistan - AI Travel Portal 🏔️
+Explore Pakistan is a modern, responsive, and feature-rich web application built using Next.js 14 (App Router) and Tailwind CSS. This portal helps users discover Pakistan's most beautiful destinations and explore their details. Additionally, it features a smart AI Travel Assistant (Safar-Guide AI) powered by the Google Gemini API to provide real-time answers to travel queries.
 
 🌟 Key Features
+Responsive Layout: 100% responsive design across mobile, tablet, and desktop views (Zero horizontal scrolling).
 
-Responsive Layout: Mobile, tablet, aur desktop par 100% responsive design (No horizontal scrolling).
+Dynamic Categories: Interactive filter controls for Northern Areas, Cultural sites, Beaches, and Adventure spots.
 
-Dynamic Categories: Northern Areas, Cultural, Beaches, aur Adventure spots ke liye interactive filter controls.
+Search Functionality: Real-time search filters to find destinations instantly.
 
-Search Functionality: Real-time search filter destinations dhoondhne ke liye.
+Dynamic 5-Day Itineraries: Detailed modals for each spot, including route guides, itineraries, and safe travel tips.
 
-Dynamic 5-Day Itineraries: Har spot ke liye detailed modal jisme route guide, itinerary aur safe travel tips shamil hain.
+Gemini-Powered Chatbot: Safar-Guide AI Assistant that interacts in Roman Urdu/Hindi regarding available packages and guides.
 
-Gemini Powered Chatbot: Safar-Guide AI Assistant jo dastyab packages aur guides par Roman Urdu/Hindi mein baat karta hai.
-
-Dynamic API Key Settings: Chatbot panel ke andar hi direct API Key input karne ki rangeen aur secure settings screen.
+Dynamic API Key Settings: A colorful and secure settings screen directly inside the chatbot panel for easy API Key input.
 
 🛠️ Tech Stack
+Frontend: Next.js 14 (React), Tailwind CSS, Lucide Icons
 
-Frontend: Next.js 14 (React), Tailwind CSS, Lucide Icons.
+AI Integration: Google Gemini API (gemini-2.5-flash model)
 
-AI Integration: Google Gemini API (gemini-2.5-flash model).
-
-Language: TypeScript.
+Language: TypeScript
 
 🔑 Gemini API Key Configuration
+There are two (2) easy ways to activate the Safar-Guide AI Chatbot:
 
-Safar-Guide AI Chatbot ko live chalane ke liye do (2) aasan tareeqay hain:
+Method A (Direct Input - Easiest)
+Run the project locally: npm run dev
 
-Tareeqa A (Direct Input - Behad Aasan):
+Open your browser and navigate to: http://localhost:3000
 
-Project ko local run karein: npm run dev
+Click the green Chat Bubble button in the bottom-right corner to open the chatbot.
 
-Browser mein open karein: http://localhost:3000
+Paste your Gemini API Key (starting with AIzaSy...) into the top black-green settings bar of the chatbot window and click save.
 
-Bottom-right corner par green color ka Chat Bubble button click karke chatbot kholin.
+The key will be saved securely to your local storage, and the chatbot will immediately go live!
 
-Chatbot window ke sab se upar black-green bar mein apni Gemini API Key (AIzaSy... se shuru hone wali) paste karke save kar dein.
+Method B (Code Configuration)
+Open the app/page.tsx file in VS Code.
 
-Key local storage mein save ho jayegi aur chatbot live kaam karna shuru kar dega!
+Paste your key on Line #11 inside the const apiKey = ""; variable:
 
-Tareeqa B (Code Configuration):
+TypeScript
+const apiKey = "AIzaSyA_Your_Actual_Key_Here";
+3. Save the file (`Ctrl + S`) and run the application.
 
-VS Code mein app/page.tsx file kholin.
+---
 
-Line #11 par const apiKey = ""; ke andar apni key paste kar dein:
+## 🚀 How To Run Locally
 
-const apiKey = "AIzaSyA_Aapki_Sahi_Key_Yahan";
-
-
-File ko save (Ctrl + S) karein aur chalayein!
-
-🚀 How To Run Locally
-
-Project dependencies install karein:
-
-npm install
-
-
-Development server chalayein:
+1. Install project dependencies:
+   ```bash
+   npm install
+Start the development server:
 
 npm run dev
 
 
-Browser mein open karein: http://localhost:3000
+3. Open your browser and go to: `http://localhost:3000`
 
-Built as an Artificial Intelligence Class Project under Ma'am Mahnoor. 🎓
+---
+
+> 🎓 **Project Note:** Built as an Artificial Intelligence Class Project under the guidance of **Ma'am Mahnoor**.

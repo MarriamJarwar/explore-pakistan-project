@@ -1,36 +1,36 @@
 ## Mission
 
-Hamara mission ek aisi khubsurat, modern aur interactive website banana hai jo Pakistan ke tourism aur khoobsurat ilaqon (jaise Hunza Valley, Skardu, Swat) ko showcase kare, aur AI chatbot ke zariye users ko behtareen travel guidance provide kare.
+Our mission is to build a beautiful, modern, and interactive website that showcases Pakistan's tourism and breathtaking regions (such as Hunza Valley, Skardu, and Swat), while providing users with top-notch travel guidance through an AI chatbot. 🏔️✨
 
 
 
 ## Core Principles
 
-1. **Aesthetics & Cleanliness:** Website ka design bohot premium aur clean hona chahiye, zyada rang-biranga nahi balki professional look ho.
+1. **Aesthetics & Cleanliness:** The website design should be very premium and clean, maintaining a professional look rather than being overly colorful. 🎨✨
 
-2. **Performance First:** Images bohot fast load hon aur website mobile aur desktop dono par smooth chale.
+2. **Performance First:** Images should load very fast, and the website must run smoothly on both mobile and desktop. 🚀📱💻
 
-3. **Accessibility:** Text ka size aur colors aise hon ke har user ba-asani parh sake.
+3. **Accessibility:** The text size and colors should be selected so that every user can read the content with ease. 📖✨
 
-4. **Interactive AI Experience:** Chatbot user ko real-time aur helpful answers de bina kisi delay ke.
+4. **Interactive AI Experience:** The chatbot should provide users with real-time and helpful answers without any delay. ⚡🤖
 
 
 
 ## Technical Standards
 
-- **Next.js 14+ (App Router)** use hoga routing ke liye.
+- **Next.js 14+ (App Router)** use for routing.
 
-- **TypeScript** standard type safety ke liye lazmi hai.
+- **TypeScript** is essential for ensuring standard type safety.
 
-- **Tailwind CSS** responsive design aur components ki styling ke liye.
+- **Tailwind CSS** Tailwind CSS is used for responsive design and component styling.
 
-- Clean component separation aur reusable UI blocks.
+- Clean component separation and reusable UI blocks.
 
 
 
 ## Design Guidelines
 
-- **Primary Color:** Emerald Green (Pakistan Green `#00502a` ya Emerald `#059669`) aur White background.
+- **Primary Color:** Emerald Green (Pakistan Green `#00502a` or Emerald `#059669`) and White background.
 
 - **Typography:** Modern Sans-Serif Fonts (Inter/Geist).
 
